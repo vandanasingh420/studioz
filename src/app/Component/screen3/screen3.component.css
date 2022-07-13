@@ -1,0 +1,30 @@
+div>form {
+    margin: 0 auto;
+    width: 65%;
+    border: 1px solid black;
+    padding: 20px;
+    height: 780px;
+    background: #FFFFFF;
+    border: 1px solid #E4E4E4;
+    border-radius: 4px;
+}
+
+select {
+    border: 1px solid #E4E4E4;
+    border-radius: 4px;
+    margin: 10px 0px;
+    height: 44px;
+}
+
+label {
+    font-family: 'HelveticaNeue';
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: capitalize;
+    color: #34495E;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,13 @@
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">Create a new order</a>
+</nav>
+<div>
+    <ul>
+        <li *ngFor="let item of list" (click)="redirect(item.Title)">
+<p class="grid" >{{item.Title}}
+    <span>{{item.subTitle}}</span>
+</p>
+<span><i class="bi bi-chevron-compact-right"></i></span>
+        </li>
+    </ul>
+</div>

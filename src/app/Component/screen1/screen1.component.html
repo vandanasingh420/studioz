@@ -1,0 +1,67 @@
+
+
+<tabset>
+   <tab *ngFor="let tabz of tabs"
+      [heading]="tabz.title"
+      [active]="tabz.active"
+      (selectTab)="tabz.active = true"        
+      >
+      <div *ngIf="tabz.content == 'First'">
+        <tabset>
+        <div>
+            <tab *ngFor="let tab of subtabs"
+                [heading]="tab.title"      >
+             <div *ngIf="tab.content == 'Third'">
+         <table class="table">
+         <thead>
+      <tr>
+      <th scope="col">Product Information<i class="bi bi-arrow-down"></i></th>
+      <th scope="col">Cart Name<i class="bi bi-arrow-down"></i></th>
+      <th scope="col">Shipping Point<i class="bi bi-arrow-down"></i></th>
+      <th scope="col">Created by<i class="bi bi-arrow-down"></i></th>
+      <th scope="col">Assembly<i class="bi bi-arrow-down"></i></th>
+      <th scope="col">Expiry<i class="bi bi-arrow-down"></i></th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of GridData | filter: searchText">
+      <td>{{item.Framing}}</td>
+      <td>{{item.Spring}}</td>
+      <td>{{item.Track}}</td>
+      <td>@{{item.Spring}}</td>
+      <td>@{{item.assembly}}</td>
+      <td>@{{item.Spring}}</td>
+
+    </tr>
+   
+  </tbody>
+        </table>
+            </div>
+            <div *ngIf="tab.title == 'Archived Carts' &&  tab.content == 'Third'">
+                <h1>No Data</h1>
+                </div>
+   </tab>
+    </div>
+      <div >
+  <div class="input-group rounded">
+   <input type="search" class="form-control rounded" id="search-addon" aria-describedby="search-addon" 
+        [(ngModel)]="searchText" placeholder="Enter text to search" 
+        autofocus>
+  <span class="input-group-text border-0" id="search-addon">
+    <i class="fas fa-search"></i>
+  </span>
+</div>
+        </div>
+</tabset>
+       </div>
+      <div *ngIf="tabz.content == 'Second'">
+       <h1>No Data</h1>
+      </div>
+   </tab>
+</tabset>
+<div>
+    <button type="button" class="btn btn-primary btn-lg btn-floating floating_btn"  (click)="redirect()">
+  <i class="bi bi-plus-lg"></i>
+</button>
+</div>

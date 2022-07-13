@@ -1,0 +1,26 @@
+.progress-bar {
+    width: 200px;
+    height: 25px;
+    background-color: #222;
+}
+
+.progress-bar-fill {
+    background-color: #5F5;
+    height: 100%;
+    /* This is important */
+}
+
+
+.layout {
+    padding: 0px !important;
+}
+
+.form_layout {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 100px;
+}
+
+label {
+    white-space: nowrap;
+}
