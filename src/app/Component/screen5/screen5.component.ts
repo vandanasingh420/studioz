@@ -15,24 +15,22 @@ export class Screen5Component implements OnInit {
         if (params !== undefined) {
             this.RowData = params['data'];
             console.log("this.RowData", this.RowData)
-            // this.RowData = this.RowData.data
         }
     }
     ngOnInit(): void {
-    }
-    Apicall(data: any) {
-        console.log("data", data)
-        // this.change.emit(this.RowData);
+        // let data: any = localStorage.getItem('values');
+        // this.RowData = JSON.parse(data)
     }
     EditItem(event: any) {
-        console.log("data", event)
-        this.router.navigate(['/Screen4'], {
+        console.log("eventeventeventeventevent", event)
+        this.router.navigate(['Screen4/Edit'], {
             state: { data: event }
         });
-
     }
     DeleteItem(event: any) {
-        console.log("data", event)
-
+        this.userService.delete(event.id).subscribe(response => {
+            // console.log(response)
+            this.router.navigate(['/Screen1'])
+        })
     }
 }

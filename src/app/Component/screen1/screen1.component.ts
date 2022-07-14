@@ -41,7 +41,5 @@ export class Screen1Component implements OnInit {
         this.router.navigate(['/Screen5'], {
             state: { data: item }
         });
-
     }
-
 }

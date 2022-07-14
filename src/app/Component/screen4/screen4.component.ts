@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+// import { ToastrService } from 'ngx-toastr';
 import { CartService } from 'src/app/Service/cart.service';
 
 @Component({
@@ -101,13 +102,29 @@ export class Screen4Component implements OnInit {
         }
 
     }
-    onSubmit() {
-        console.log(" this.addDetails", this.addDetails.value);
-        this.userService.postData(this.addDetails.value)
-            .subscribe(response => {
-                console.log(response)
-                this.router.navigate(['/Screen5'])
-            })
+    onSubmit(event: Event) {
+        if (this.router.url == '/Screen4/Edit') {
+            console.log("this.row idddddd", this.RowData.id)
+            this.userService.update(this.RowData.id, this.addDetails.value)
+                .subscribe(response => {
+                    localStorage.setItem('values', JSON.stringify(this.addDetails.value))
+                    console.log("response", response);
+                    this.router.navigate(['/Screen5'], {
+                        state: { data: this.addDetails.value }
+                    });
+                })
+        }
+        else {
+            this.userService.postData(this.addDetails.value,)
+                .subscribe(response => {
+                    console.log(response);
+                    localStorage.setItem('values', JSON.stringify(this.addDetails.value))
+
+                    this.router.navigate(['/Screen5'], {
+                        state: { data: this.addDetails.value }
+                    });
+                })
+        }
     }
 
 }
