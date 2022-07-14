@@ -122,3 +122,13 @@ p>span {
     font-weight: 400;
     color: #8894A0;
 }
+
+nav {
+    background-color: #34495E !important;
+    color: white;
+}
+
+nav>a {
+    color: white;
+    font-size: 16px;
+}

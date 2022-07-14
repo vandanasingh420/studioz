@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 @Injectable({
     providedIn: 'root'
 })
@@ -15,4 +16,36 @@ export class CartService {
     postData(data: any): Observable<any> {
         return this.http.post(`${this.baseURL}/post`, data)
     }
+
+    find(id: any): Observable<any> {
+        return this.http.get(this.baseURL + '/post/' + id)
+            .pipe(
+                catchError(this.errorHandler)
+            )
+    }
+
+    update(id: any, post: any): Observable<any> {
+        return this.http.put(this.baseURL + '/post/' + id, JSON.stringify(post))
+            .pipe(
+                catchError(this.errorHandler)
+            )
+    }
+
+    delete(id: any) {
+        return this.http.delete(this.baseURL + '/post/' + id)
+            .pipe(
+                catchError(this.errorHandler)
+            )
+    }
+
+    errorHandler(error: any) {
+        let errorMessage = '';
+        if (error.error instanceof ErrorEvent) {
+            errorMessage = error.error.message;
+        } else {
+            errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+        }
+        return throwError(errorMessage);
+    }
 }
+

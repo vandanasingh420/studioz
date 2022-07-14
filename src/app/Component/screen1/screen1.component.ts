@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { CartService } from '../../Service/cart.service';
 
@@ -11,6 +11,7 @@ import { CartService } from '../../Service/cart.service';
 export class Screen1Component implements OnInit {
     GridData: any;
     searchText = '';
+    rowData: any;
     constructor(public router: Router, private userService: CartService) { }
     tabs = [
         { title: 'CARTs', content: 'First', active: true },
@@ -28,12 +29,19 @@ export class Screen1Component implements OnInit {
                 this.GridData = data
 
             })
-        // this.submitData()
-
     }
 
     redirect() {
         this.router.navigate(['/Screen2'])
+    }
+
+    rowClicked(item: any) {
+        console.log("item", item);
+        this.rowData = item;
+        this.router.navigate(['/Screen5'], {
+            state: { data: item }
+        });
+
     }
 
 }

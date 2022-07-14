@@ -3,7 +3,6 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CartService } from 'src/app/Service/cart.service';
 
-
 @Component({
     selector: 'app-screen4',
     templateUrl: './screen4.component.html',
@@ -51,12 +50,55 @@ export class Screen4Component implements OnInit {
         // Packaging:new FormControl(),
         // Packaging:new FormControl(),
     })
+    RowData: any;
     constructor(public fb: FormBuilder, public router: Router, private userService: CartService) {
-
+        const params = this.router.getCurrentNavigation()?.extras.state;
+        console.log('params => ', params);
+        if (params !== undefined) {
+            this.RowData = params['data'];
+            console.log("this.RowData", this.RowData)
+        }
     }
     progress = 20
     ngOnInit(): void {
+        if (this.RowData !== undefined) {
+            console.log("RowData", this.RowData)
+            this.addDetails.patchValue({
+                assembly: this.RowData.assembly,
+                Widthft: this.RowData.Widthft,
+                Widthin: this.RowData.Widthin,
+                Heigthft: this.RowData.Heigthft,
+                Heigthin: this.RowData.Heigthin,
+                Windcode: this.RowData.Windcode,
+                Design: this.RowData.Design,
+                Color: this.RowData.Color,
+                glassType: this.RowData.glassType,
+                Sections: this.RowData.Sections,
+                Framing: this.RowData.Framing,
+                Spring: this.RowData.Spring,
+                Track: this.RowData.Track,
+                Track_lift: this.RowData.Track_lift,
+                Track_mount: this.RowData.Track_mount,
+                Track_radius: this.RowData.Track_radius,
+                Packaging: this.RowData.Packaging,
+                Configuration: this.RowData.Configuration,
+                Lock: this.RowData.Lock,
+                misclock: this.RowData.misclock,
+                options: ({
+                    checkbox_selected: this.RowData.options.checkbox_selected,
+                    Strut: this.RowData.options.Strut,
+                    Strap: this.RowData.options.Strap,
+                    Quiet: this.RowData.options.Quiet,
+                    Astragal: this.RowData.options.Astragal,
+                    Gold: this.RowData.options.Gold,
+                    Medallion: this.RowData.options.Medallion,
+                    Light: this.RowData.options.Light,
+                    Slide: this.RowData.options.Slide,
+                    Spear: this.RowData.options.Spear,
 
+                })
+            })
+        }
 
     }
     onSubmit() {

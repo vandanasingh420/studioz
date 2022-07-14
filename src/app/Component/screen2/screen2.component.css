@@ -17,15 +17,6 @@ p.grid {
 
 
 
-nav {
-    background-color: #34495E !important;
-    color: white;
-}
-
-nav>a {
-    color: white;
-    font-size: 16px;
-}
 
 .bi-chevron-compact-right::before {
     content: "\f27b";

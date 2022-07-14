@@ -15,24 +15,23 @@
          <table class="table">
          <thead>
       <tr>
-      <th scope="col">Product Information<i class="bi bi-arrow-down"></i></th>
-      <th scope="col">Cart Name<i class="bi bi-arrow-down"></i></th>
-      <th scope="col">Shipping Point<i class="bi bi-arrow-down"></i></th>
-      <th scope="col">Created by<i class="bi bi-arrow-down"></i></th>
+      <th scope="col">Framing<i class="bi bi-arrow-down"></i></th>
+      <th scope="col">Spring<i class="bi bi-arrow-down"></i></th>
+      <th scope="col">Track Point<i class="bi bi-arrow-down"></i></th>
+      <th scope="col">Lock<i class="bi bi-arrow-down"></i></th>
       <th scope="col">Assembly<i class="bi bi-arrow-down"></i></th>
-      <th scope="col">Expiry<i class="bi bi-arrow-down"></i></th>
+      <th scope="col">Windcode<i class="bi bi-arrow-down"></i></th>
 
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let item of GridData | filter: searchText">
+    <tr *ngFor="let item of GridData | filter: searchText" (click)="rowClicked(item)" >
       <td>{{item.Framing}}</td>
-      <td>{{item.Spring}}</td>
+      <td>@{{item.Spring}}</td>
       <td>{{item.Track}}</td>
-      <td>@{{item.Spring}}</td>
-      <td>@{{item.assembly}}</td>
-      <td>@{{item.Spring}}</td>
-
+      <td>{{item.Lock}}</td>
+      <td>{{item.assembly}}</td>
+      <td>{{item.Windcode}}</td>
     </tr>
    
   </tbody>

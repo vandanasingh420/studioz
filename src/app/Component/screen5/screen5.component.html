@@ -1,10 +1,12 @@
-
-<div class="row">
+<nav class="navbar navbar-light" >
+  <a class="" href="#">Create a new order</a>
+</nav>
+<div class="row" >
     <div class="col-12">
           <div class="layout"> 
             <p class="grid" >10' 0'' X 10' 0.0'' CAN211 CC W1 COMPLETE DOOR INTELLICORE OBSCURE, 5TH GENERATION FINISH WALDER DOOR  
-    <span>Job Name: Front door with glass  Change</span>
-    <span>Product #CWD •  Garage Door</span>
+    <span>Job Name: {{RowData.assembly}}</span>
+    <span>Product #{{RowData.Design}} •  {{RowData.Windcode}}</span>
     <span>Availability: IN STOCK (Available for Pickup)</span>
 </p>        
 <section class="h-100" >
@@ -38,6 +40,13 @@ Unit Price: $4800.00</h5>
               </div>
 
             </div>
+          </div>
+        </div>
+         <div class="card">
+          <div class="card-body">
+            <button type="button" class="btn btn-warning btn-block btn-lg" (click)="EditItem(RowData)">Edit</button>
+            <button type="button" class="btn btn-warning btn-block btn-lg" (click)="DeleteItem(RowData)">Delete</button>
+
           </div>
         </div>
         <div class="card">
