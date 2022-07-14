@@ -1,7 +1,5 @@
 .progress-bar {
-    width: 200px;
-    height: 25px;
-    background-color: #222;
+    background-color: #17A85F;
 }
 
 .progress-bar-fill {
@@ -9,7 +7,6 @@
     height: 100%;
     /* This is important */
 }
-
 
 .layout {
     padding: 0px !important;

@@ -14,8 +14,8 @@ export class Screen1Component implements OnInit {
     rowData: any;
     constructor(public router: Router, private userService: CartService) { }
     tabs = [
-        { title: 'CARTs', content: 'First', active: true },
-        { title: 'FAVORITEs', content: 'Second' }
+        { title: 'CARTS', content: 'First', active: true },
+        { title: 'FAVORITES', content: 'Second' }
     ];
     subtabs = [
         { title: 'Active Carts', content: 'Third' },

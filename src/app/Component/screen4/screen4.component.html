@@ -1,322 +1,337 @@
 <nav class="navbar navbar-light">
-  <a class="" href="#">Create a new order</a>
+    <a class="" href="#">Create a new order</a>
 </nav>
-<div class="progress-bar">
-  <div class="progress-bar-fill" [ngStyle]="{'width.%': progress * 100}"></div>
-</div>
-<div>
-    <form [formGroup]="addDetails" (ngSubmit)="onSubmit()">
-        <div class="layout">
-            <p class="layout_p">
-                Layout options
-            </p>
- <div class="form-group row form_layout">
-    <label for="inputPassword"  class="col-sm-2 col-form-label">Assembly Type</label>
-    <div class="col-sm-8">
-        <select class="form-select"  name="inputPassword" id="inputPassword"  aria-label="Default select example" formControlName="assembly">
-  <option selected value="Complete Door">Complete Door</option>
-  <option value="Complete Door 1">Complete Door 1</option>
-  <option value="Complete Door 2">Complete Door 2</option>
-  <option value="Complete Door 3">Complete Door 3</option>
-</select>
-      <!-- <input type="password" class="form-control" id="inputPassword" placeholder="Password"> -->
+<div class="col-md-8 m-auto">
+    <div class="progress my-4 col-md-6 m-auto">
+        <div class="progress-bar" role="progressbar" style="width: 47%;" aria-valuenow="47" aria-valuemin="0" aria-valuemax="100">47%</div>
     </div>
-  </div>
-  <div class="form-group row form_layout">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Measure Size</label>
-    <div class="col-sm-4">
-   <span>Width</span>
-
-        <select class="form-select" aria-label="Default select example" formControlName="Widthft">
-  <option selected value="8 in.">8 ft.</option>
-  <option value="7 ft.">7 ft.</option>
-  <option value="6 ft.">6 ft. </option>
-  <option value="9 ft.">9 ft. </option>
-</select>
-<select class="form-select" aria-label="Default select example" formControlName="Widthin">
-  <option selected value="8 in.">8 in.</option>
-  <option value="7 in.">7 in.</option>
-  <option value="6 in.">6 in. </option>
-  <option value="9 in.">9 in. </option>
-</select>
-      <!-- <input type="password" class="form-control" id="inputPassword" placeholder="Password"> -->
-    </div>
-     <div class="col-sm-4">
-   <span>Heigth</span>
-
-        <select class="form-select" aria-label="Default select example" formControlName="Heigthft">
-   <option selected value="8 ft.">8 ft.</option>
-  <option value="7 ft.">7 ft.</option>
-  <option value="6 ft.">6 ft. </option>
-  <option value="9 ft.">9 ft. </option>
-</select>
-<select class="form-select" aria-label="Default select example" formControlName="Heigthin">
-   <option selected value="8 in.">8 in.</option>
-  <option value="7 in.">7 in.</option>
-  <option value="6 in.">6 in. </option>
-  <option value="9 in.">9 in. </option>
-</select>
-      <!-- <input type="password" class="form-control" id="inputPassword" placeholder="Password"> -->
-    </div>
-  </div>
-  <div class="form-group row form_layout">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Windcode</label>
-    <div class="col-sm-8">
-        <select class="form-select" aria-label="Default select example" formControlName="Windcode">
-  <option selected  value="WindCode W1">WindCode W1</option>
-  <option value="WindCode W1 1">WindCode W1 1</option>
-  <option value="WindCode W1 2">WindCode W1 2</option>
-  <option value="WindCode W1 3">WindCode W1 3</option>
-</select>
-      <!-- <input type="password" class="form-control" id="inputPassword" placeholder="Password"> -->
-    </div>
-  </div>
-  <div class="form-group row form_layout">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Design</label>
-    <div class="col-sm-8">
-        <select class="form-select" aria-label="Default select example" formControlName="Design">
-  <option selected value="CC">CC</option>
-  <option value="CC 1">CC 1</option>
-  <option value="CC 2">CC 2</option>
-  <option value="CC 3">CC 3</option>
-</select>
-    </div>
-  </div>
-    <div class="form-group row form_layout">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Color</label>
-    <div class="col-sm-8">
-        <select class="form-select" aria-label="Default select example" formControlName="Color">
-  <option selected value="Dark Finish">Dark Finish</option>
-  <option value="Black">Black</option>
-  <option value="White">White</option>
-  <option value="Brown">Brown</option>
-</select>
-    </div>
-  </div>
-        </div>
-  <div class="layout">
-            <p class="layout_p">
-                Window Options
-            </p>
- <div class="form-group row form_layout">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Glass Type</label>
-    <div class="col-sm-8">
-        <select class="form-select" aria-label="Default select example" formControlName="glassType">
+    <div>
+        <form [formGroup]="addDetails" (ngSubmit)="onSubmit()">
+            <div class="layout">
+                <p class="layout_p">
+                    Layout options
+                </p>
+                <div class="form-group row form_layout">
+                    <label for="inputPassword" class="col-md-4 col-form-label">Assembly Type</label>
+                    <div class="col-md-8">
+                        <select class="form-select" name="inputPassword" id="inputPassword" aria-label="Default select example" formControlName="assembly">
+                          <option selected value="Complete Door">Complete Door</option>
+                          <option value="Complete Door 1">Complete Door 1</option>
+                          <option value="Complete Door 2">Complete Door 2</option>
+                          <option value="Complete Door 3">Complete Door 3</option>
+                        </select>
+                        <!-- <input type="password" class="form-control" id="inputPassword" placeholder="Password"> -->
+                    </div>
+                </div>
+                <div class="form-group row form_layout">
+                    <label for="inputPassword" class="col-md-4 col-form-label">Measure Size</label>
+                    <div class="col-md-8">
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <span>Width</span>
+                            </div>
+                            <div class="col-md-4">
+                                <select class="form-select" aria-label="Default select example" formControlName="Widthft">
+                                <option selected value="8 in.">8 ft.</option>
+                                <option value="7 ft.">7 ft.</option>
+                                <option value="6 ft.">6 ft. </option>
+                                <option value="9 ft.">9 ft. </option>
+                              </select>
+                            </div>
+                            <div class="col-md-4">
+                                <select class="form-select" aria-label="Default select example" formControlName="Widthin">
+                                  <option selected value="8 in.">8 in.</option>
+                                  <option value="7 in.">7 in.</option>
+                                  <option value="6 in.">6 in. </option>
+                                  <option value="9 in.">9 in. </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <span>Heigth</span>
+                            </div>
+                            <div class="col-md-4">
+                                <select class="form-select" aria-label="Default select example" formControlName="Heigthft">
+                              <option selected value="8 ft.">8 ft.</option>
+                              <option value="7 ft.">7 ft.</option>
+                              <option value="6 ft.">6 ft. </option>
+                              <option value="9 ft.">9 ft. </option>
+                            </select>
+                            </div>
+                            <div class="col-md-4">
+                                <select class="form-select" aria-label="Default select example" formControlName="Heigthin">
+                              <option selected value="8 in.">8 in.</option>
+                              <option value="7 in.">7 in.</option>
+                              <option value="6 in.">6 in. </option>
+                              <option value="9 in.">9 in. </option>
+                            </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row form_layout">
+                    <label for="inputPassword" class="col-md-4 col-form-label">Windcode</label>
+                    <div class="col-md-8">
+                        <select class="form-select" aria-label="Default select example" formControlName="Windcode">
+                  <option selected  value="WindCode W1">WindCode W1</option>
+                  <option value="WindCode W1 1">WindCode W1 1</option>
+                  <option value="WindCode W1 2">WindCode W1 2</option>
+                  <option value="WindCode W1 3">WindCode W1 3</option>
+                </select>
+                        <!-- <input type="password" class="form-control" id="inputPassword" placeholder="Password"> -->
+                    </div>
+                </div>
+                <div class="form-group row form_layout">
+                    <label for="inputPassword" class="col-md-4 col-form-label">Design</label>
+                    <div class="col-md-8">
+                        <select class="form-select" aria-label="Default select example" formControlName="Design">
+                  <option selected value="CC">CC</option>
+                  <option value="CC 1">CC 1</option>
+                  <option value="CC 2">CC 2</option>
+                  <option value="CC 3">CC 3</option>
+                </select>
+                    </div>
+                </div>
+                <div class="form-group row form_layout">
+                    <label for="inputPassword" class="col-md-4 col-form-label">Color</label>
+                    <div class="col-md-8">
+                        <select class="form-select" aria-label="Default select example" formControlName="Color">
+                  <option selected value="Dark Finish">Dark Finish</option>
+                  <option value="Black">Black</option>
+                  <option value="White">White</option>
+                  <option value="Brown">Brown</option>
+                </select>
+                    </div>
+                </div>
+            </div>
+            <div class="layout">
+                <p class="layout_p">
+                    Window Options
+                </p>
+                <div class="form-group row form_layout">
+                    <label for="inputPassword" class="col-md-4 col-form-label">Glass Type</label>
+                    <div class="col-md-8">
+                        <select class="form-select" aria-label="Default select example" formControlName="glassType">
   <option selected value="Solid">Solid (No Windows)</option>
   <option value="Solid 1">Solid 1</option>
   <option value="Solid 2">Solid 2</option>
   <option value="Solid 3">Solid 3</option>
 </select>
-    </div>
-  </div>
-   <div class="form-group row form_layout">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Section(s) Glazed</label>
-    <div class="col-sm-8">
-        <select class="form-select" aria-label="Default select example" formControlName="Sections">
+                    </div>
+                </div>
+                <div class="form-group row form_layout">
+                    <label for="inputPassword" class="col-md-4 col-form-label">Section(s) Glazed</label>
+                    <div class="col-md-8">
+                        <select class="form-select" aria-label="Default select example" formControlName="Sections">
   <option selected value="Sections">Sections 4</option>
   <option value="Sections 1">Sections 1</option>
   <option value="Sections 2">Sections 2</option>
   <option value="Sections 3">Sections 3</option>
 </select>
-    </div>
-  </div>
-   <div class="form-group row form_layout">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Framing</label>
-    <div class="col-sm-8">
-        <select class="form-select" aria-label="Default select example" formControlName="Framing">
+                    </div>
+                </div>
+                <div class="form-group row form_layout">
+                    <label for="inputPassword" class="col-md-4 col-form-label">Framing</label>
+                    <div class="col-md-8">
+                        <select class="form-select" aria-label="Default select example" formControlName="Framing">
   <option selected value="Arch 1 Design">Arch 1 Design</option>
   <option value="Arch 2 Design">Arch 2 Design</option>
   <option value="Arch 3 Design">Arch 3 Design</option>
 </select>
-    </div>
-  </div>
-        </div>
-         <div class="layout">
-            <p class="layout_p">
-                Track Options
-            </p>
- <div class="form-group row form_layout">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Spring</label>
-    <div class="col-sm-8">
-        <select class="form-select" aria-label="Default select example" formControlName="Spring">
+                    </div>
+                </div>
+            </div>
+            <div class="layout">
+                <p class="layout_p">
+                    Track Options
+                </p>
+                <div class="form-group row form_layout">
+                    <label for="inputPassword" class="col-md-4 col-form-label">Spring</label>
+                    <div class="col-md-8">
+                        <select class="form-select" aria-label="Default select example" formControlName="Spring">
   <option selected value="Galvanized Torsion">Galvanized Torsion</option>
   <option value="Galvanized Torsion 1">Galvanized Torsion 1</option>
   <option value="Galvanized Torsion 2">Galvanized Torsion 2</option>
   <option value="Galvanized Torsion 3">Galvanized Torsion 3</option>
 </select>
-      <!-- <input type="password" class="form-control" id="inputPassword" placeholder="Password"> -->
-    </div>
-  </div>
-  <div class="form-group row form_layout">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Track Size</label>
-    <div class="col-sm-8">
-        <select class="form-select" aria-label="Default select example" formControlName="Track">
+                        <!-- <input type="password" class="form-control" id="inputPassword" placeholder="Password"> -->
+                    </div>
+                </div>
+                <div class="form-group row form_layout">
+                    <label for="inputPassword" class="col-md-4 col-form-label">Track Size</label>
+                    <div class="col-md-8">
+                        <select class="form-select" aria-label="Default select example" formControlName="Track">
   <option selected value="2” Flag & Jamb Brackets Loose">2” Flag & Jamb Brackets Loose</option>
   <option value="2” Flag & Jamb Brackets Loose1">2” Flag & Jamb Brackets Loose1</option>
   <option value="2” Flag & Jamb Brackets Loose2">2” Flag & Jamb Brackets Loose2</option>
 </select>
-      <!-- <input type="password" class="form-control" id="inputPassword" placeholder="Password"> -->
-    </div>
-  </div>
-  <div class="form-group row form_layout">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Track Mount</label>
-    <div class="col-sm-8">
-        <select class="form-select" aria-label="Default select example" formControlName="Track_mount">
+                        <!-- <input type="password" class="form-control" id="inputPassword" placeholder="Password"> -->
+                    </div>
+                </div>
+                <div class="form-group row form_layout">
+                    <label for="inputPassword" class="col-md-4 col-form-label">Track Mount</label>
+                    <div class="col-md-8">
+                        <select class="form-select" aria-label="Default select example" formControlName="Track_mount">
   <option selected value="Bracket 1">Bracket 1</option>
   <option value="Bracket 2">Bracket 2</option>
   <option value="Bracket 3">Bracket 3</option>
 </select>
-      <!-- <input type="password" class="form-control" id="inputPassword" placeholder="Password"> -->
-    </div>
-  </div>
-  <div class="form-group row form_layout">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Track Lift</label>
-    <div class="col-sm-8">
-        <select class="form-select" aria-label="Default select example" formControlName="Track_lift">
+                        <!-- <input type="password" class="form-control" id="inputPassword" placeholder="Password"> -->
+                    </div>
+                </div>
+                <div class="form-group row form_layout">
+                    <label for="inputPassword" class="col-md-4 col-form-label">Track Lift</label>
+                    <div class="col-md-8">
+                        <select class="form-select" aria-label="Default select example" formControlName="Track_lift">
   <option selected value="Standard 1">Standard 1</option>
   <option value="Standard 2">Standard 2</option>
   <option value="Standard 3">Standard 3</option>
 </select>
-      <!-- <input type="password" class="form-control" id="inputPassword" placeholder="Password"> -->
-    </div>
-  </div>
-  <div class="form-group row form_layout">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Track Radius</label>
-    <div class="col-sm-8">
-        <select class="form-select" aria-label="Default select example" formControlName="Track_radius">
+                        <!-- <input type="password" class="form-control" id="inputPassword" placeholder="Password"> -->
+                    </div>
+                </div>
+                <div class="form-group row form_layout">
+                    <label for="inputPassword" class="col-md-4 col-form-label">Track Radius</label>
+                    <div class="col-md-8">
+                        <select class="form-select" aria-label="Default select example" formControlName="Track_radius">
   <option selected value="12 Radius">12 Radius</option>
   <option value="11 Radius">11 Radius</option>
   <option value="13 Radius">13 Radius</option>
 </select>
-      <!-- <input type="password" class="form-control" id="inputPassword" placeholder="Password"> -->
-    </div>
-  </div>
-        </div>
-         <div class="layout">
-            <p class="layout_p">
-                Other Options
-            </p>
- <div class="form-group row form_layout">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Lock</label>
-    <div class="col-sm-8">
-        <select class="form-select" aria-label="Default select example" formControlName="Lock">
+                        <!-- <input type="password" class="form-control" id="inputPassword" placeholder="Password"> -->
+                    </div>
+                </div>
+            </div>
+            <div class="layout">
+                <p class="layout_p">
+                    Other Options
+                </p>
+                <div class="form-group row form_layout">
+                    <label for="inputPassword" class="col-md-4 col-form-label">Lock</label>
+                    <div class="col-md-8">
+                        <select class="form-select" aria-label="Default select example" formControlName="Lock">
   <option selected value="Inside Slide Lock (#2)">Inside Slide Lock (#2)</option>
   <option value="Inside Slide Lock (#2) 1">Inside Slide Lock (#2) 1</option>
   <option value="Inside Slide Lock (#2) 2">Inside Slide Lock (#2) 2</option>
   <option value="Inside Slide Lock (#2) 3">Inside Slide Lock (#2) 3</option>
 </select>
-      <!-- <input type="password" class="form-control" id="inputPassword" placeholder="Password"> -->
-    </div>
-  </div>
-  <div class="form-group row form_layout">
-    <label for="inputPassword" class="col-sm-2 col-form-label">MISC Lock Options</label>
-    <div class="col-sm-8">
-        <input class="form-check-input" type="radio" name="misclock" id="misclock" value="1" formControlName="misclock">
-  <label class="form-check-label" for="misclock" >No Lock Hole
+                        <!-- <input type="password" class="form-control" id="inputPassword" placeholder="Password"> -->
+                    </div>
+                </div>
+                <div class="form-group row form_layout">
+                    <label for="inputPassword" class="col-md-4 col-form-label">MISC Lock Options</label>
+                    <div class="col-md-8">
+                        <input class="form-check-input" type="radio" name="misclock" id="misclock" value="1" formControlName="misclock">
+                        <label class="form-check-label" for="misclock">No Lock Hole
   </label>
-    </div>
-  </div>
-  <div class="form-group row form_layout">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Packaging</label>
-    <div class="col-sm-8">
-        <select class="form-select" aria-label="Default select example" formControlName="Packaging">
+                    </div>
+                </div>
+                <div class="form-group row form_layout">
+                    <label for="inputPassword" class="col-md-4 col-form-label">Packaging</label>
+                    <div class="col-md-8">
+                        <select class="form-select" aria-label="Default select example" formControlName="Packaging">
   <option selected value="[x] Distributor">[x] Distributor</option>
   <option value="[x] Distributor 1">[x] Distributor 1</option>
   <option value="[x] Distributor 2">[x] Distributor 2</option>
   <option value="[x] Distributor 3">[x] Distributor3</option>
 </select>
-<p>
-    Clopay CWD Models Excludes  Packaging Options
-</p>
-      <!-- <input type="password" class="form-control" id="inputPassword" placeholder="Password"> -->
-    </div>
-  </div>
-  <div class="form-group row form_layout" formGroupName="options">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Additional Options</label>
-   <div class="col-sm-4">
-     <div class="col-sm-8">
-         <input class="form-check-input" type="checkbox" value="1" id="Strut" formControlName="Strut">
-  <label class="form-check-label" for="Strut">
-    Extra Strut(s)
-  </label>
-    </div>
-    <div class="col-sm-8">
-         <input class="form-check-input" type="checkbox" value="1" id="Strap" formControlName="Strap">
-  <label class="form-check-label" for="Strap">
+                        <p>
+                            Clopay CWD Models Excludes Packaging Options
+                        </p>
+                        <!-- <input type="password" class="form-control" id="inputPassword" placeholder="Password"> -->
+                    </div>
+                </div>
+                <div class="form-group row form_layout" formGroupName="options">
+                    <label for="inputPassword" class="col-md-4 col-form-label">Additional Options</label>
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <input class="form-check-input" type="checkbox" value="1" id="Strut" formControlName="Strut">
+                                <label class="form-check-label" for="Strut">
+                              Extra Strut(s)
+                            </label>
+                            </div>
+                            <div class="col-md-4">
+                                <select class="form-select" aria-label="Default select example" formControlName="checkbox_selected">
+                            <option selected value="Extra Strut(s)">Extra Strut(s)</option>
+                          </select>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <input class="form-check-input" type="checkbox" value="1" id="Strap" formControlName="Strap">
+                            <label class="form-check-label" for="Strap">
     Spade Strap Hinge(s)
   </label>
-    </div>
-    <div class="col-sm-8">
-         <input class="form-check-input" type="checkbox" value="1" formControlName="Quiet" id="Quiet">
-  <label class="form-check-label" for="Quiet">
+                        </div>
+                        <div class="col-md-8">
+                            <input class="form-check-input" type="checkbox" value="1" formControlName="Quiet" id="Quiet">
+                            <label class="form-check-label" for="Quiet">
     14 GA Quiet Hinge  </label>
-    </div>
-    <div class="col-sm-8">
-         <input class="form-check-input" type="checkbox" value="1" formControlName="Astragal" id="Astragal">
-  <label class="form-check-label" for="Astragal">
+                        </div>
+                        <div class="col-md-8">
+                            <input class="form-check-input" type="checkbox" value="1" formControlName="Astragal" id="Astragal">
+                            <label class="form-check-label" for="Astragal">
     Less Bottom Astragal
   </label>
-    </div>
-    <div class="col-sm-8">
-         <input class="form-check-input" type="checkbox" value="1" formControlName="Gold" id="Gold">
-  <label class="form-check-label" for="Gold">
+                        </div>
+                        <div class="col-md-8">
+                            <input class="form-check-input" type="checkbox" value="1" formControlName="Gold" id="Gold">
+                            <label class="form-check-label" for="Gold">
     Gold Bar Gurantee ( Select Dealers )
   </label>
-    </div>
-    <div class="col-sm-8">
-         <input class="form-check-input" type="checkbox" value="1" formControlName="Medallion" id="Medallion">
-  <label class="form-check-label" for="Medallion">
+                        </div>
+                        <div class="col-md-8">
+                            <input class="form-check-input" type="checkbox" value="1" formControlName="Medallion" id="Medallion">
+                            <label class="form-check-label" for="Medallion">
     Medallion Hardware Upgrade  </label>
-    </div>
-    <div class="col-sm-8">
-         <input class="form-check-input" type="checkbox" value="1" formControlName="Light" id="Light">
-  <label class="form-check-label" for="Light">
+                        </div>
+                        <div class="col-md-8">
+                            <input class="form-check-input" type="checkbox" value="1" formControlName="Light" id="Light">
+                            <label class="form-check-label" for="Light">
     Light Seal Kit
   </label>
-    </div>
-    <div class="col-sm-8">
-         <input class="form-check-input" type="checkbox" value="1" formControlName="Slide" id="Slide">
-  <label class="form-check-label" for="Slide">
+                        </div>
+                        <div class="col-md-8">
+                            <input class="form-check-input" type="checkbox" value="1" formControlName="Slide" id="Slide">
+                            <label class="form-check-label" for="Slide">
     Slide Lock Mounted at 54
   </label>
-    </div>
-<div class="col-sm-8">
-         <input class="form-check-input" type="checkbox" value="1"formControlName="Spear"  id="Spear">
-  <label class="form-check-label" for="Spear">
+                        </div>
+                        <div class="col-md-8">
+                            <input class="form-check-input" type="checkbox" value="1" formControlName="Spear" id="Spear">
+                            <label class="form-check-label" for="Spear">
     2 Spear Lift Handles
   </label>
-    </div>
-   </div>
-   <div class="col-sm-4">
-       <select class="form-select" aria-label="Default select example" formControlName="checkbox_selected">
-  <option selected value="Extra Strut(s)">Extra Strut(s)</option>
-</select>
-   </div>
-  </div>
-        </div>
-        <div class="layout">         
- <div class="form-group row form_layout">
-    <div class="col-sm-12" >
-   <input class="form-check-input" type="checkbox" name="Fresher"formControlName="Configuration" value="1" id="Configuration">
-  <label class="form-check-label" for="Configuration" >
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="layout">
+                <div class="form-group row form_layout">
+                    <div class="col-sm-12">
+                        <input class="form-check-input" type="checkbox" name="Fresher" formControlName="Configuration" value="1" id="Configuration">
+                        <label class="form-check-label" for="Configuration">
     Special Configuration Request
   </label>
 
-    </div>
-  </div>
-  
-        </div>
-           <div class="layout">         
-<p>Torsion Spring Inquiry  <span>></span></p>
-        </div>
-         <div class="layout">         
-<p>Additional Information  <span>></span></p>
-        </div>
-        <div class="layout">           
-            <button type="button" class="btn btn-warning">Preview</button>
-  <button type="button" class="btn btn-warning" (click)="onSubmit()">Add To Cart</button>
+                    </div>
+                </div>
 
-        </div>
-    </form>
-    
+            </div>
+            <div class="layout">
+                <p>Torsion Spring Inquiry <span>></span></p>
+            </div>
+            <div class="layout">
+                <p>Additional Information <span>></span></p>
+            </div>
+            <div class="layout">
+                <button type="button" class="btn btn-warning">Preview</button>
+                <button type="button" class="btn btn-warning" (click)="onSubmit()">Add To Cart</button>
+
+            </div>
+        </form>
+
+    </div>
 </div>

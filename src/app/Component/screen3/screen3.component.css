@@ -1,12 +1,11 @@
 div>form {
     margin: 0 auto;
-    width: 65%;
     border: 1px solid black;
     padding: 20px;
-    height: 780px;
     background: #FFFFFF;
     border: 1px solid #E4E4E4;
     border-radius: 4px;
+    margin-top: 20px;
 }
 
 select {
