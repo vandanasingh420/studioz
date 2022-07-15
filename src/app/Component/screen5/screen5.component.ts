@@ -17,13 +17,17 @@ export class Screen5Component implements OnInit {
     }
     ngOnInit(): void { }
     EditItem(event: any) {
+        console.log("eventevent", event)
         this.router.navigate(['Screen4/Edit'], {
-            state: { data: event }
+            queryParams: event
         });
     }
     DeleteItem(event: any) {
         this.userService.delete(event.id).subscribe(response => {
             this.router.navigate(['/Screen1'])
         })
+    }
+    redirect() {
+        this.router.navigate(['Screen2']);
     }
 }

@@ -47,25 +47,24 @@ export class Screen4Component implements OnInit {
     })
     RowData: any;
     constructor(public fb: FormBuilder, public router: Router, private userService: CartService) {
-        const params = this.router.getCurrentNavigation()?.extras.state;
+        const params = this.router.getCurrentNavigation()?.extras.queryParams;
         if (params !== undefined) {
-            this.RowData = params['data'];
+            this.RowData = params;
+            console.log("step 4444", this.RowData)
         }
     }
     progress = 20
     ngOnInit(): void {
         if (this.RowData !== undefined) {
             this.addDetails.patchValue({
-                step1: ({
-                    assembly: this.RowData.assembly,
-                    Widthft: this.RowData.Widthft,
-                    Widthin: this.RowData.Widthin,
-                    Heigthft: this.RowData.Heigthft,
-                    Heigthin: this.RowData.Heigthin,
-                    Windcode: this.RowData.Windcode,
-                    Design: this.RowData.Design,
-                    Color: this.RowData.Color,
-                }),
+                assembly: this.RowData.assembly,
+                Widthft: this.RowData.Widthft,
+                Widthin: this.RowData.Widthin,
+                Heigthft: this.RowData.Heigthft,
+                Heigthin: this.RowData.Heigthin,
+                Windcode: this.RowData.Windcode,
+                Design: this.RowData.Design,
+                Color: this.RowData.Color,
                 glassType: this.RowData.glassType,
                 Sections: this.RowData.Sections,
                 Framing: this.RowData.Framing,

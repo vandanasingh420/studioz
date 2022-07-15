@@ -36,7 +36,7 @@ export class Screen1Component implements OnInit {
     rowClicked(item: any) {
         this.rowData = item;
         this.router.navigate(['/Screen5'], {
-            state: { data: item }
+            queryParams: item
         });
     }
 }
