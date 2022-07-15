@@ -13,11 +13,13 @@
 }
 
 .form_layout {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 100px;
+    padding: 10px 20px;
 }
 
 label {
     white-space: nowrap;
+}
+
+.form-select {
+    margin-bottom: 10px;
 }

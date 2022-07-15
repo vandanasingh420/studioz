@@ -1,63 +1,161 @@
-<nav class="navbar navbar-light" >
-  <a class="" href="#">Create a new order</a>
+<nav class="navbar navbar-light">
+    <a class="" href="#">Create a new order</a>
 </nav>
-<div class="row" >
-    <div class="col-12">
-          <div class="layout"> 
-            <p class="grid" >10' 0'' X 10' 0.0'' CAN211 CC W1 COMPLETE DOOR INTELLICORE OBSCURE, 5TH GENERATION FINISH WALDER DOOR  
-    <span>Job Name: {{RowData.assembly}}</span>
-    <span>Product #{{RowData.Design}} •  {{RowData.Windcode}}</span>
-    <span>Availability: IN STOCK (Available for Pickup)</span>
-</p>        
-<section class="h-100" >
-  <div class="container h-100 py-5">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-10">
-        <div class="card rounded-3 mb-4">
-          <div class="card-body p-4">
-            <div class="row d-flex justify-content-between align-items-center">
-              <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                <button class="btn btn-link px-2"
-                  onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                  <i class="bi bi-dash"></i>
-                </button>
-                <input id="form1" min="0" name="quantity" value="2" type="number"
-                  class="form-control form-control-sm" />
-                <button class="btn btn-link px-2"
-                  onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                  <i class="bi bi-plus"></i>
-                </button>
-              </div>
-              <div class="col-md-3 col-lg-3 col-xl-3">
-                <p class="lead fw-normal mb-2">Standard Multiplier: .432
-Secondary Multipliers Applied</p>
-                <!-- <p><span class="text-muted">Size: </span>M <span class="text-muted">Color: </span>Grey</p> -->
-              </div>
-             
-              <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                <h5 class="mb-0">Net Price: $4500.00
-Unit Price: $4800.00</h5>
-              </div>
+
+<div class="row">
+    <div class="col-md-8 m-auto">
+        <div class="layout">
+            <p class="grid">10' 0'' X 10' 0.0'' CAN211 CC W1 COMPLETE DOOR INTELLICORE OBSCURE, 5TH GENERATION FINISH WALDER DOOR
+                <!-- <span>Job Name: {{RowData.assembly}}</span>
+                <span>Product #{{RowData.Design}} •  {{RowData.Windcode}}</span> -->
+                <span>Job Name: Front Door With glass</span>
+                <span>Product #CWD • Garage Door</span>
+                <span>Availability: <span class="green_text"><strong>IN STOCK</strong></span> (Available for Pickup)</span>
+            </p>
+            <section class="h-100">
+                <div class="container h-100">
+                    <div class="row d-flex justify-content-center align-items-center h-100">
+                        <div class="col-md-12">
+                            <div class="rounded-3 mb-4">
+                                <div class="row d-flex justify-content-between align-items-start">
+                                    <div class="col-md-3 d-flex align-items-center">
+                                        <button class="btn btn_sign px-2" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                                              <i class="bi bi-dash"></i>
+                                            </button>
+                                        <input id="form1" min="0" name="quantity" value="2" type="number" class="form-control form-control-sm text-center" />
+                                        <button class="btn btn_sign px-2" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                                        <i class="bi bi-plus"></i>
+                                        </button>
+                                    </div>
+                                    <!-- <div class="offset-md-1">
+                                    </div> -->
+                                    <div class="col-md-4 offset-md-1">
+                                        <p class="lead fw-normal mb-2 text-center">
+                                            <span class="green_text">Standard Multiplier: .432 </span><br/>
+                                            <span class="green_text">Secondary Multipliers Applied</span> <br/>
+                                            <span class="brown_text"><b>Apply MPQ</b></span></p>
+                                        <!-- <p><span class="text-muted">Size: </span>M <span class="text-muted">Color: </span>Grey</p> -->
+                                    </div>
+                                    <!-- <div class="offset-md-1">
+                                    </div> -->
+                                    <div class="col-md-3 offset-md-1 ">
+                                        <p class="lead fw-normal mb-2 text_align_right">
+                                            <span class="black_text">Net Price: <b class="large_text">$4500.00</b></span><br/>
+                                            <span class="black_text"> Unit Price: $4800.00</span><br/>
+                                            <span class="brown_text">View Price Details</span>
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- <div class="card">
+                                <div class="card-body">
+                                    <button type="button" class="btn btn-warning btn-block btn-lg" (click)="EditItem(RowData)">Edit</button>
+                                    <button type="button" class="btn btn-warning btn-block btn-lg" (click)="DeleteItem(RowData)">Delete</button>
+
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <button type="button" class="btn btn-warning btn-block btn-lg">Proceed to Pay</button>
+                                </div>
+                            </div> -->
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row checkout_action">
+                                <div class="col-md-3 text-center py-2"><img src="../../../assets/img/favorite.png"></div>
+                                <div class="col-md-3 text-center  py-2"><img src="../../../assets/img/edit.png"></div>
+                                <div class="col-md-3 text-center  py-2"><img src="../../../assets/img/copy.png"></div>
+                                <div class="col-md-3 text-center  py-2"><img src="../../../assets/img/delete.png"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- <div class="layout"> -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="layout">
+                            <div class="form-group">
+                                <label for="">Change Delivery Date</label>
+                                <input type="date" class="form-control my-2" id="" placeholder="31-Dec-2022">
+                                <p>Standard Delivery : Tue May 28-2022</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="layout">
+                            <div class="form-group">
+                                <label for="">Purchase Order Number</label>
+                                <input type="text" class="form-control  my-2" id="" placeholder="Enter PO Number">
+                                <p>This PO will be useful to track this order items</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="layout">
+                    <p>Bill Summary</p>
+                    <div class="d-flex justify-content-between mb-1">
+                        <span class="black_text">Sub Total</span>
+                        <span class="black_text">$ 4500.00</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-1">
+                        <span class="black_text">Energy Surcharge</span>
+                        <span class="black_text">$ 70.18</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-1">
+                        <span class="black_text">Sales Tax</span>
+                        <span class="black_text">$ 490.93</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-1">
+                        <span class="black_text"><strong>Total</strong></span>
+                        <span class="black_text"><strong>$5061.11</strong></span>
+                    </div>
+                    <hr>
+                    <div class="apply_tax col-md-12">
+                        <input class="form-check-input" type="checkbox" name="applyTax" id="applyTax" value="1" formControlName="applyTax">
+                        <label class="form-check-label brown_text" for="applyTax"><strong>Apply Tax</strong>
+                            </label>
+                        <p>(The 1% iStore discount is calculated into the total price for all doors and door parts. Please refer to the quote or order acknowledgment for details.)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- </div> -->
+        <div class="layout">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>Billing To</p>
+                    <div class="mb-1">
+                        <p class="brown_text mb-1"><strong>Bement Jared</strong></p>
+                        <p class="black_text mb-1">144 Curt Shores, 50, Madison Avenue Hixson - 42040</p>
+                        <p class="black_text mb-1">Contact: (123) 456 7890</p>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <p>Shipping To</p>
+                    <div class="">
+                        <p class="brown_text mb-1"><strong>Bement Jared</strong></p>
+                        <p class="black_text mb-1">144 Curt Shores, 50, Madison Avenue Hixson - 42040</p>
+                        <p class="black_text mb-1">Contact: (123) 456 7890</p>
+                    </div>
+                </div>
 
             </div>
-          </div>
         </div>
-         <div class="card">
-          <div class="card-body">
-            <button type="button" class="btn btn-warning btn-block btn-lg" (click)="EditItem(RowData)">Edit</button>
-            <button type="button" class="btn btn-warning btn-block btn-lg" (click)="DeleteItem(RowData)">Delete</button>
-
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body">
-            <button type="button" class="btn btn-warning btn-block btn-lg">Proceed to Pay</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+        <div class="layout">
+            <div class="d-flex px-4 justify-content-end">
+                <button type="button" class="btn btn_border">ADD MORe</button>
+                <button type="button" class="btn btn_brown ms-4">PLACE ORDER</button>
+            </div>
         </div>
     </div>
 </div>
