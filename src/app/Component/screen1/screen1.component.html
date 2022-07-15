@@ -1,66 +1,60 @@
-
-
 <tabset>
-   <tab *ngFor="let tabz of tabs"
-      [heading]="tabz.title"
-      [active]="tabz.active"
-      (selectTab)="tabz.active = true"        
-      >
-      <div *ngIf="tabz.content == 'First'">
-        <tabset>
-        <div>
-            <tab *ngFor="let tab of subtabs"
-                [heading]="tab.title"      >
-             <div *ngIf="tab.content == 'Third'">
-         <table class="table">
-         <thead>
-      <tr>
-      <th scope="col">Framing<i class="bi bi-arrow-down"></i></th>
-      <th scope="col">Spring<i class="bi bi-arrow-down"></i></th>
-      <th scope="col">Track Point<i class="bi bi-arrow-down"></i></th>
-      <th scope="col">Lock<i class="bi bi-arrow-down"></i></th>
-      <th scope="col">Assembly<i class="bi bi-arrow-down"></i></th>
-      <th scope="col">Windcode<i class="bi bi-arrow-down"></i></th>
-
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of GridData | filter: searchText" (click)="rowClicked(item)" >
-      <td>{{item.Framing}}</td>
-      <td>@{{item.Spring}}</td>
-      <td>{{item.Track}}</td>
-      <td>{{item.Lock}}</td>
-      <td>{{item.assembly}}</td>
-      <td>{{item.Windcode}}</td>
-    </tr>
-   
-  </tbody>
-        </table>
-            </div>
-            <div *ngIf="tab.title == 'Archived Carts' &&  tab.content == 'Third'">
-                <h1>No Data</h1>
+    <tab *ngFor="let tabz of tabs" [heading]="tabz.title" [active]="tabz.active" (selectTab)="tabz.active = true">
+        <div *ngIf="tabz.content == 'First'">
+            <div class="container-fluid">
+                <div class="search_filter_option">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search"[(ngModel)]="searchText" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <span class="input-group-text" id="basic-addon2"><i class="bi bi-search"></i></span>
+                        </div>
+                    </div>
                 </div>
-   </tab>
-    </div>
-      <div >
-  <div class="input-group rounded">
-   <input type="search" class="form-control rounded" id="search-addon" aria-describedby="search-addon" 
-        [(ngModel)]="searchText" placeholder="Enter text to search" 
-        autofocus>
-  <span class="input-group-text border-0" id="search-addon">
-    <i class="fas fa-search"></i>
-  </span>
-</div>
+                <tabset class="subTab_data">
+
+                    <div>
+                        <tab *ngFor="let tab of subtabs" [heading]="tab.title">
+                            <div *ngIf="tab.content == 'Third'">
+                                <table class="table table-striped my-3" >
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Framing<i class="bi bi-arrow-down"></i></th>
+                                            <th scope="col">Spring<i class="bi bi-arrow-down"></i></th>
+                                            <th scope="col">Track Point<i class="bi bi-arrow-down"></i></th>
+                                            <th scope="col">Lock<i class="bi bi-arrow-down"></i></th>
+                                            <th scope="col">Assembly<i class="bi bi-arrow-down"></i></th>
+                                            <th scope="col">Windcode<i class="bi bi-arrow-down"></i></th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of GridData | filter: searchText" (click)="rowClicked(item)">
+                                            <td>{{item.Framing}}</td>
+                                            <td>@{{item.Spring}}</td>
+                                            <td>{{item.Track}}</td>
+                                            <td>{{item.Lock}}</td>
+                                            <td>{{item.assembly}}</td>
+                                            <td>{{item.Windcode}}</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </tab>
+                    </div>
+
+                </tabset>
+            </div>
         </div>
-</tabset>
-       </div>
-      <div *ngIf="tabz.content == 'Second'">
-       <h1>No Data</h1>
-      </div>
-   </tab>
+        <div *ngIf="tabz.content == 'Second'">
+            <div class="container-fluid">
+                <h1>No Data</h1>
+            </div>
+        </div>
+    </tab>
 </tabset>
 <div>
-    <button type="button" class="btn btn-primary btn-lg btn-floating floating_btn"  (click)="redirect()">
+    <button type="button" class="btn btn-primary btn-lg btn-floating floating_btn" (click)="redirect()">
   <i class="bi bi-plus-lg"></i>
 </button>
 </div>

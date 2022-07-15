@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~bootstrap-icons/font/bootstrap-icons.css";
 
+@import "~bootstrap-icons/font/bootstrap-icons.css";
 .user_icon {
     width: 45px;
     height: 45px;
@@ -17,7 +17,7 @@
 }
 
 .nav-tabs {
-    border-bottom: 1px solid #dee2e6;
+    border-bottom: 0px solid #dee2e6 !important;
     /* color: #34495E; */
     background: #34495E;
 }
@@ -31,13 +31,19 @@
     list-style: none;
 }
 
-.nav-tabs .nav-item.show .nav-link,
+.nav-item {
+    border-bottom: 3px solid transparent;
+}
+
+.nav-tabs .nav-item.active {
+    font-weight: 600;
+    border: 0px;
+    border-bottom: 2px solid rgba(250, 202, 48, 1);
+}
+
 .nav-tabs .nav-link.active {
-    color: white !important;
-    border-bottom: 1px solid #FACA30 !important;
+    border: 0px;
     background-color: transparent !important;
-    border-color: transparent !important;
-    text-decoration: line-through;
 }
 
 .nav-link {
@@ -72,13 +78,23 @@ body {
 }
 
 .btn_alignment {
-    position: absolute;
-    bottom: 0;
-    right: 20%;
+    text-align: right;
+}
+
+.btn_brown {
+    background: #66332B !important;
+    border-radius: 4px !important;
+    color: #FFF !important;
+}
+
+.btn_border {
+    background: #fff !important;
+    border-radius: 4px !important;
+    color: #66332B !important;
+    border: 1px solid #66332B;
 }
 
 .layout {
-    width: 65%;
     /* height: 500px; */
     border-radius: 4px;
     background: #FFFFFF;
@@ -95,6 +111,9 @@ body {
     display: flex;
     align-items: center;
     padding: 20px;
+    font-weight: 500;
+    font-size: 15px;
+    text-transform: capitalize;
 }
 
 p.grid {
@@ -131,4 +150,52 @@ nav {
 nav>a {
     color: white;
     font-size: 16px;
+}
+
+.navbar-expand-lg .navbar-collapse {
+    justify-content: end;
+}
+
+.navbar-nav {
+    align-items: center;
+}
+
+.navbar-nav i {
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+.subTab_data .nav-tabs {
+    background-color: transparent;
+    justify-content: left;
+    border-bottom: 1px solid #dcc2e6!important;
+}
+
+.subTab_data .nav-tabs .nav-link {
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #8894A0 !important;
+    padding: 20px;
+}
+
+.subTab_data .table>:not(caption)>*>* {
+    background-color: #fff;
+    padding: 15px;
+}
+
+.search_filter_option {
+    position: absolute;
+    width: 10%;
+    right: 15px;
+    margin-top: 13px;
+}
+
+.card_data {
+    cursor: pointer;
+}
+
+label.form-check-label {
+    margin-bottom: 15px;
+    margin-left: 10px;
 }

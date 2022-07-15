@@ -25,7 +25,7 @@ export class CartService {
     }
 
     update(id: any, post: any): Observable<any> {
-        return this.http.put(this.baseURL + '/post/' + id, JSON.stringify(post))
+        return this.http.put(this.baseURL + '/post/' + id, post)
             .pipe(
                 catchError(this.errorHandler)
             )
