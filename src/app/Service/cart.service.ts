@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
+import { Observable, throwError, BehaviorSubject } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 @Injectable({
     providedIn: 'root'
@@ -9,7 +9,11 @@ export class CartService {
 
     constructor(private http: HttpClient) { }
     public baseURL = `http://localhost:3000`
-
+    private previousUrl: BehaviorSubject<any> = new BehaviorSubject<any>(null);
+    public previousUrl$: Observable<any> = this.previousUrl.asObservable();
+    setPreviousUrl(previousUrl: string) {
+        this.previousUrl.next(previousUrl);
+    }
     getAllData(): Observable<any> {
         return this.http.get(`${this.baseURL}/post`)
     }
