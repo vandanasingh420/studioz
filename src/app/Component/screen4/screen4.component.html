@@ -2,8 +2,10 @@
 
 <div class="col-md-8 m-auto">
     <div class="progress my-4 col-md-6 m-auto">
-        <div class="progress-bar" role="progressbar" [ngStyle]="{width:(newprogessbar)+'%'}" aria-valuemin="0"></div>
+        <div class="progress-bar" role="progressbar" [ngStyle]="{width:(newprogessbar)+'%'}" aria-valuemax="100"></div>
+       
     </div>
+     <p class="progess_text">{{newprogessbar}}% Completed</p>
     <div>
         <form [formGroup]="addDetails" (ngSubmit)="onSubmit()">
             <div class="layout">
@@ -13,9 +15,9 @@
                 <!--  formGroupName="step1" -->
                 <div >
                 <div class="form-group row form_layout">
-                    <label for="inputPassword" class="col-md-4 col-form-label">Assembly Type</label>
+                    <label for="inputPassword" class="col-md-4 col-form-label required">Assembly Type</label>
                     <div class="col-md-8">
-                        <select class="form-select" name="inputPassword" id="inputPassword" aria-label="Default select example" formControlName="assembly" #assembly (change)="ValueChanged(assembly)">
+                        <select class="form-select " name="inputPassword" id="inputPassword" aria-label="Default select example" formControlName="assembly" #assembly (change)="ValueChanged(assembly)">
                           <option selected value="Complete Door">Complete Door</option>
                           <option value="Complete Door 1">Complete Door 1</option>
                           <option value="Complete Door 2">Complete Door 2</option>
@@ -25,14 +27,14 @@
                     </div>
                 </div>
                 <div class="form-group row form_layout">
-                    <label for="inputPassword" class="col-md-4 col-form-label">Measure Size</label>
+                    <label for="inputPassword" class="col-md-4 col-form-label required">Measure Size</label>
                     <div class="col-md-8">
                         <div class="row mb-3">
                             <div class="col-md-4">
                                 <span>Width</span>
                             </div>
                             <div class="col-md-4">
-                                <select class="form-select" aria-label="Default select example" formControlName="Widthft" #Widthft  (blur)="ValueChanged(Widthft)">
+                                <select class="form-select" aria-label="Default select example " formControlName="Widthft" #Widthft  (blur)="ValueChanged(Widthft)">
                                 <option selected value="8 in.">8 ft.</option>
                                 <option value="7 ft.">7 ft.</option>
                                 <option value="6 ft.">6 ft. </option>
@@ -40,7 +42,7 @@
                               </select>
                             </div>
                             <div class="col-md-4">
-                                <select class="form-select" aria-label="Default select example" formControlName="Widthin" #Widthin (blur)="ValueChanged(Widthin)">
+                                <select class="form-select" aria-label="Default select example " formControlName="Widthin" #Widthin (blur)="ValueChanged(Widthin)">
                                   <option selected value="8 in.">8 in.</option>
                                   <option value="7 in.">7 in.</option>
                                   <option value="6 in.">6 in. </option>
@@ -53,7 +55,7 @@
                                 <span>Heigth</span>
                             </div>
                             <div class="col-md-4">
-                                <select class="form-select" aria-label="Default select example" formControlName="Heigthft" #Heigthft (blur)="ValueChanged(Heigthft)">
+                                <select class="form-select" aria-label="Default select example " formControlName="Heigthft" #Heigthft (blur)="ValueChanged(Heigthft)">
                               <option selected value="8 ft.">8 ft.</option>
                               <option value="7 ft.">7 ft.</option>
                               <option value="6 ft.">6 ft. </option>
@@ -61,7 +63,7 @@
                             </select>
                             </div>
                             <div class="col-md-4">
-                                <select class="form-select" aria-label="Default select example" formControlName="Heigthin" #Heigthin (blur)="ValueChanged(Heigthin)">
+                                <select class="form-select" aria-label="Default select example " formControlName="Heigthin" #Heigthin (blur)="ValueChanged(Heigthin)">
                               <option selected value="8 in.">8 in.</option>
                               <option value="7 in.">7 in.</option>
                               <option value="6 in.">6 in. </option>
@@ -72,7 +74,7 @@
                     </div>
                 </div>
                 <div class="form-group row form_layout">
-                    <label for="inputPassword" class="col-md-4 col-form-label">Windcode</label>
+                    <label for="inputPassword" class="col-md-4 col-form-label ">Windcode</label>
                     <div class="col-md-8">
                         <select class="form-select" aria-label="Default select example" formControlName="Windcode"  #Windcode (blur)="ValueChanged(Windcode)">
                   <option selected  value="WindCode W1">WindCode W1</option>
@@ -86,7 +88,7 @@
                 <div class="form-group row form_layout">
                     <label for="inputPassword" class="col-md-4 col-form-label">Design</label>
                     <div class="col-md-8">
-                        <select class="form-select" aria-label="Default select example" formControlName="Design">
+                        <select class="form-select" aria-label="Default select example" formControlName="Design"  #Design (blur)="ValueChanged(Design)">
                   <option selected value="CC">CC</option>
                   <option value="CC 1">CC 1</option>
                   <option value="CC 2">CC 2</option>
@@ -97,7 +99,7 @@
                 <div class="form-group row form_layout">
                     <label for="inputPassword" class="col-md-4 col-form-label">Color</label>
                     <div class="col-md-8">
-                        <select class="form-select" aria-label="Default select example" formControlName="Color">
+                        <select class="form-select" aria-label="Default select example" formControlName="Color"  #Color (blur)="ValueChanged(Color)">
                   <option selected value="Dark Finish">Dark Finish</option>
                   <option value="Black">Black</option>
                   <option value="White">White</option>
@@ -113,9 +115,9 @@
                 <!-- <div formGroupName="step2"> -->
                     <div >
                     <div class="form-group row form_layout">
-                    <label for="inputPassword" class="col-md-4 col-form-label">Glass Type</label>
+                    <label for="inputPassword" class="col-md-4 col-form-label required">Glass Type</label>
                     <div class="col-md-8">
-                        <select class="form-select" aria-label="Default select example" formControlName="glassType">
+                        <select class="form-select" aria-label="Default select example" formControlName="glassType" #glassType (blur)="ValueChanged(glassType)">
   <option selected value="Solid">Solid (No Windows)</option>
   <option value="Solid 1">Solid 1</option>
   <option value="Solid 2">Solid 2</option>
@@ -124,7 +126,7 @@
                     </div>
                 </div>
                 <div class="form-group row form_layout">
-                    <label for="inputPassword" class="col-md-4 col-form-label">Section(s) Glazed</label>
+                    <label for="inputPassword" class="col-md-4 col-form-label required">Section(s) Glazed</label>
                     <div class="col-md-8">
                         <select class="form-select" aria-label="Default select example" formControlName="Sections">
   <option selected value="Sections">Sections 4</option>
@@ -135,7 +137,7 @@
                     </div>
                 </div>
                 <div class="form-group row form_layout">
-                    <label for="inputPassword" class="col-md-4 col-form-label">Framing</label>
+                    <label for="inputPassword" class="col-md-4 col-form-label required">Framing</label>
                     <div class="col-md-8">
                         <select class="form-select" aria-label="Default select example" formControlName="Framing">
   <option selected value="Arch 1 Design">Arch 1 Design</option>
@@ -153,9 +155,9 @@
               <!-- <div formGroupName="step3"> -->
                 <div >
                   <div class="form-group row form_layout">
-                    <label for="inputPassword" class="col-md-4 col-form-label">Spring</label>
+                    <label for="inputPassword" class="col-md-4 col-form-label required">Spring</label>
                     <div class="col-md-8">
-                        <select class="form-select" aria-label="Default select example" formControlName="Spring">
+                        <select class="form-select" aria-label="Default select example" formControlName="Spring"#Spring (blur)="ValueChanged(Spring)" >
   <option selected value="Galvanized Torsion">Galvanized Torsion</option>
   <option value="Galvanized Torsion 1">Galvanized Torsion 1</option>
   <option value="Galvanized Torsion 2">Galvanized Torsion 2</option>
@@ -165,9 +167,9 @@
                     </div>
                 </div>
                 <div class="form-group row form_layout">
-                    <label for="inputPassword" class="col-md-4 col-form-label">Track Size</label>
+                    <label for="inputPassword" class="col-md-4 col-form-label required">Track Size</label>
                     <div class="col-md-8">
-                        <select class="form-select" aria-label="Default select example" formControlName="Track">
+                        <select class="form-select" aria-label="Default select example" formControlName="Track" #Track (blur)="ValueChanged(Track)">
   <option selected value="2” Flag & Jamb Brackets Loose">2” Flag & Jamb Brackets Loose</option>
   <option value="2” Flag & Jamb Brackets Loose1">2” Flag & Jamb Brackets Loose1</option>
   <option value="2” Flag & Jamb Brackets Loose2">2” Flag & Jamb Brackets Loose2</option>
@@ -217,9 +219,9 @@
                 <!-- <div formGroupName="step4"> -->
                     <div >
                     <div class="form-group row form_layout">
-                    <label for="inputPassword" class="col-md-4 col-form-label">Lock</label>
+                    <label for="inputPassword" class="col-md-4 col-form-label required">Lock</label>
                     <div class="col-md-8">
-                        <select class="form-select" aria-label="Default select example" formControlName="Lock">
+                        <select class="form-select" aria-label="Default select example" formControlName="Lock" #Lock (blur)="ValueChanged(Lock)">
   <option selected value="Inside Slide Lock (#2)">Inside Slide Lock (#2)</option>
   <option value="Inside Slide Lock (#2) 1">Inside Slide Lock (#2) 1</option>
   <option value="Inside Slide Lock (#2) 2">Inside Slide Lock (#2) 2</option>
@@ -229,17 +231,17 @@
                     </div>
                 </div>
                 <div class="form-group row form_layout">
-                    <label for="inputPassword" class="col-md-4 col-form-label">MISC Lock Options</label>
+                    <label for="inputPassword" class="col-md-4 col-form-label required">MISC Lock Options</label>
                     <div class="col-md-8">
-                        <input class="form-check-input" type="radio" name="misclock" id="misclock" value="1" formControlName="misclock">
+                        <input class="form-check-input" type="radio" name="misclock" id="misclock" value="1" formControlName="misclock"  #misclock (blur)="ValueChanged(misclock)">
                         <label class="form-check-label" for="misclock">No Lock Hole
   </label>
                     </div>
                 </div>
                 <div class="form-group row form_layout">
-                    <label for="inputPassword" class="col-md-4 col-form-label">Packaging</label>
+                    <label for="inputPassword" class="col-md-4 col-form-label required">Packaging</label>
                     <div class="col-md-8">
-                        <select class="form-select" aria-label="Default select example" formControlName="Packaging">
+                        <select class="form-select" aria-label="Default select example" formControlName="Packaging"  #Packaging (blur)="ValueChanged(Packaging)">
   <option selected value="[x] Distributor">[x] Distributor</option>
   <option value="[x] Distributor 1">[x] Distributor 1</option>
   <option value="[x] Distributor 2">[x] Distributor 2</option>

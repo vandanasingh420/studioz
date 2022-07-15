@@ -8,12 +8,8 @@ import { catchError } from 'rxjs/operators';
 export class CartService {
 
     constructor(private http: HttpClient) { }
-    public baseURL = `http://localhost:3000`
-    private previousUrl: BehaviorSubject<any> = new BehaviorSubject<any>(null);
-    public previousUrl$: Observable<any> = this.previousUrl.asObservable();
-    setPreviousUrl(previousUrl: string) {
-        this.previousUrl.next(previousUrl);
-    }
+    public baseURL = `http://localhost:3000`;
+
     getAllData(): Observable<any> {
         return this.http.get(`${this.baseURL}/post`)
     }

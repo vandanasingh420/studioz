@@ -11,9 +11,7 @@ import { Screen5Component } from './Component/screen5/screen5.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgbdNavBasicModule } from './directive/nav-basic.module';
 import { TabsModule, TabsetConfig } from 'ngx-bootstrap/tabs';
-import { FilterPipe } from './directive/filter.pipe';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 // import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -26,7 +24,6 @@ import { NavbarComponent } from './Component/navbar/navbar.component';
         Screen3Component,
         Screen4Component,
         Screen5Component,
-        FilterPipe,
         NavbarComponent
     ],
     imports: [
@@ -36,7 +33,6 @@ import { NavbarComponent } from './Component/navbar/navbar.component';
         ReactiveFormsModule,
         HttpClientModule,
         NgbModule,
-        NgbdNavBasicModule,
         TabsModule,
         Ng2SearchPipeModule,
         BrowserAnimationsModule,

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartService } from 'src/app/Service/cart.service';
-
 @Component({
     selector: 'app-screen2',
     templateUrl: './screen2.component.html',
@@ -12,14 +11,6 @@ export class Screen2Component implements OnInit {
     constructor(public router: Router, public userservice: CartService) { }
 
     ngOnInit(): void {
-
-    }
-    previousPath() {
-        console.log("previousUrl", this.previousUrl)
-        this.userservice.previousUrl$
-            .subscribe((previousUrl: string) => {
-                this.previousUrl = previousUrl
-            });
     }
     list: any = [{
         "Title": 'Configure your door from scratch', 'subTitle': 'Residential, Commerical, Entry doors'

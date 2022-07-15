@@ -1,7 +1,6 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-// import { ToastrService } from 'ngx-toastr';
 import { CartService } from 'src/app/Service/cart.service';
 
 @Component({
@@ -10,37 +9,29 @@ import { CartService } from 'src/app/Service/cart.service';
     styleUrls: ['./screen4.component.css']
 })
 export class Screen4Component implements OnInit {
-    // public addDetails: FormGroup;
     newprogessbar: number = 0;
     addDetails = new FormGroup({
-        // step1: new FormGroup({
-        assembly: new FormControl(),
-        Widthft: new FormControl(),
-        Widthin: new FormControl(),
-        Heigthft: new FormControl(),
-        Heigthin: new FormControl(),
-        Windcode: new FormControl(),
-        Design: new FormControl(),
-        Color: new FormControl(),
-        // }),
-        // step2: new FormGroup({
-        glassType: new FormControl(),
-        Sections: new FormControl(),
-        Framing: new FormControl(),
-        // }),
-        // step3: new FormGroup({
-        Spring: new FormControl(),
-        Track: new FormControl(),
-        Track_lift: new FormControl(),
-        Track_mount: new FormControl(),
-        Track_radius: new FormControl(),
-        // }),
-        // step4: new FormGroup({
-        Packaging: new FormControl(),
-        Lock: new FormControl(),
-        misclock: new FormControl(),
+        assembly: new FormControl('', [Validators.minLength(2), Validators.required]),
+        Widthft: new FormControl('', [Validators.minLength(2)]),
+        Widthin: new FormControl('', [Validators.minLength(2)]),
+        Heigthft: new FormControl('', [Validators.minLength(2)]),
+        Heigthin: new FormControl('', [Validators.minLength(2)]),
+        Windcode: new FormControl(''),
+        Design: new FormControl(''),
+        Color: new FormControl(''),
+        glassType: new FormControl('', [Validators.minLength(2), Validators.required]),
+        Sections: new FormControl('', [Validators.minLength(2), Validators.required]),
+        Framing: new FormControl('', [Validators.minLength(2), Validators.required]),
+        Spring: new FormControl('', [Validators.minLength(2)]),
+        Track: new FormControl('', [Validators.minLength(2)]),
+        Track_lift: new FormControl(''),
+        Track_mount: new FormControl(''),
+        Track_radius: new FormControl(''),
+        Packaging: new FormControl('', [Validators.minLength(2)]),
+        Lock: new FormControl('', [Validators.minLength(2)]),
+        misclock: new FormControl(''),
         options: new FormGroup({
-            checkbox_selected: new FormControl(),
+            checkbox_selected: new FormControl([Validators.minLength(1)]),
             Strut: new FormControl(),
             Strap: new FormControl(),
             Quiet: new FormControl(),
@@ -50,7 +41,6 @@ export class Screen4Component implements OnInit {
             Light: new FormControl(),
             Slide: new FormControl(),
             Spear: new FormControl(),
-            // })
         }),
         Configuration: new FormControl(),
 
@@ -58,40 +48,32 @@ export class Screen4Component implements OnInit {
     RowData: any;
     constructor(public fb: FormBuilder, public router: Router, private userService: CartService) {
         const params = this.router.getCurrentNavigation()?.extras.state;
-        console.log('params => ', params);
         if (params !== undefined) {
             this.RowData = params['data'];
-            console.log("this.RowData", this.RowData)
         }
     }
     progress = 20
     ngOnInit(): void {
         if (this.RowData !== undefined) {
-            console.log("RowData", this.RowData)
             this.addDetails.patchValue({
-                // step1: ({
-                assembly: this.RowData.assembly,
-                Widthft: this.RowData.Widthft,
-                Widthin: this.RowData.Widthin,
-                Heigthft: this.RowData.Heigthft,
-                Heigthin: this.RowData.Heigthin,
-                Windcode: this.RowData.Windcode,
-                Design: this.RowData.Design,
-                Color: this.RowData.Color,
-                // }),
-                // step2: ({
+                step1: ({
+                    assembly: this.RowData.assembly,
+                    Widthft: this.RowData.Widthft,
+                    Widthin: this.RowData.Widthin,
+                    Heigthft: this.RowData.Heigthft,
+                    Heigthin: this.RowData.Heigthin,
+                    Windcode: this.RowData.Windcode,
+                    Design: this.RowData.Design,
+                    Color: this.RowData.Color,
+                }),
                 glassType: this.RowData.glassType,
                 Sections: this.RowData.Sections,
                 Framing: this.RowData.Framing,
-                // }),
-                // step3: ({
                 Spring: this.RowData.Spring,
                 Track: this.RowData.Track,
                 Track_lift: this.RowData.Track_lift,
                 Track_mount: this.RowData.Track_mount,
                 Track_radius: this.RowData.Track_radius,
-                // }),
-                // step4: ({
                 Packaging: this.RowData.Packaging,
                 Configuration: this.RowData.Configuration,
                 Lock: this.RowData.Lock,
@@ -107,55 +89,44 @@ export class Screen4Component implements OnInit {
                     Light: this.RowData.options.Light,
                     Slide: this.RowData.options.Slide,
                     Spear: this.RowData.options.Spear,
-
-                    // })
-
                 })
             })
         }
 
     }
     ValueChanged(input: any) {
-        console.log("input", input.value);
-        console.log("this.addDetails.controls.assembly.value ", this.addDetails.controls.assembly.value);
-
-        // for (let i in this.addDetails.controls.step1.value) {
-        //     if (this.addDetails.controls.step1.value[i] == null) {
-        //         console.log("this.addDetails.controls.step1.valid", this.addDetails.controls.step1.valid, this.addDetails.controls.step1.value)
-        //         this.newprogessbar = 25;
-        //     }
-        //     // this.addDetails.controls.step1.value[i];
-        // }
-        if (this.addDetails.controls.assembly.dirty && this.addDetails.controls.Widthft.dirty && this.addDetails.controls.Widthin.dirty && this.addDetails.controls.Heigthft.dirty && this.addDetails.controls.Heigthin.dirty && this.addDetails.controls.Design.dirty && this.addDetails.controls.Color.dirty && this.addDetails.controls.Windcode.dirty) {
-            console.log("assembly.value ", this.addDetails.controls.assembly.value);
-            this.newprogessbar = 25;
+        if (this.addDetails.controls.assembly.value && this.addDetails.controls.Widthft.value && this.addDetails.controls.Widthin.value && this.addDetails.controls.Heigthft.value && this.addDetails.controls.Heigthin.value && this.addDetails.controls.Design.value && this.addDetails.controls.Color.value && this.addDetails.controls.Windcode.value) {
+            this.newprogessbar = this.newprogessbar + 15;
         }
-        else {
-            console.log("this.addDetails ,123")
+        else if (this.addDetails.controls.glassType.value) {
+            this.newprogessbar = this.newprogessbar + 5;
+        }
+        else if (this.addDetails.controls.Spring.value && this.addDetails.controls.Track.value) {
+            this.newprogessbar = this.newprogessbar + 15;
+        } if (this.newprogessbar > 100) {
+            this.newprogessbar = 100
         }
     }
     onSubmit() {
-        if (this.router.url == '/Screen4/Edit') {
-            console.log("this.row idddddd", this.RowData.id)
-            this.userService.update(this.RowData.id, this.addDetails.value)
-                .subscribe(response => {
-                    // localStorage.setItem('values', JSON.stringify(this.addDetails.value))
-                    console.log("response", response);
-                })
-            this.router.navigate(['/Screen5'], {
-                state: { data: this.addDetails.value }
-            });
-        }
-        else {
-            this.userService.postData(this.addDetails.value,)
-                .subscribe(response => {
-                    console.log(response);
-                    // localStorage.setItem('values', JSON.stringify(this.addDetails.value))
-
-                    this.router.navigate(['/Screen5'], {
-                        state: { data: this.addDetails.value }
-                    });
-                })
+        if (this.addDetails.valid) {
+            if (this.router.url == '/Screen4/Edit') {
+                this.newprogessbar = 100;
+                this.userService.update(this.RowData.id, this.addDetails.value)
+                    .subscribe(response => {
+                    })
+                this.router.navigate(['/Screen5'], {
+                    state: { data: this.addDetails.value }
+                });
+            }
+            else {
+                this.newprogessbar = 100;
+                this.userService.postData(this.addDetails.value,)
+                    .subscribe(response => {
+                        this.router.navigate(['/Screen5'], {
+                            queryParams: this.addDetails.value
+                        });
+                    })
+            }
         }
     }
 }

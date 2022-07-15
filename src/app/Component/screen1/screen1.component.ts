@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import { Component, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { CartService } from '../../Service/cart.service';
 
 
@@ -25,9 +25,7 @@ export class Screen1Component implements OnInit {
 
         this.userService.getAllData()
             .subscribe(data => {
-                console.log(data)
                 this.GridData = data
-
             })
     }
 
@@ -36,7 +34,6 @@ export class Screen1Component implements OnInit {
     }
 
     rowClicked(item: any) {
-        console.log("item", item);
         this.rowData = item;
         this.router.navigate(['/Screen5'], {
             state: { data: item }
