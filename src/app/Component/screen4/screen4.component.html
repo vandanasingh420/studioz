@@ -76,7 +76,7 @@
                 <div class="form-group row form_layout">
                     <label for="inputPassword" class="col-md-4 col-form-label ">Windcode</label>
                     <div class="col-md-8">
-                        <select class="form-select" aria-label="Default select example" formControlName="Windcode"  #Windcode (blur)="ValueChanged(Windcode)">
+                        <select class="form-select" aria-label="Default select example" formControlName="Windcode">
                   <option selected  value="WindCode W1">WindCode W1</option>
                   <option value="WindCode W1 1">WindCode W1 1</option>
                   <option value="WindCode W1 2">WindCode W1 2</option>
@@ -88,7 +88,7 @@
                 <div class="form-group row form_layout">
                     <label for="inputPassword" class="col-md-4 col-form-label">Design</label>
                     <div class="col-md-8">
-                        <select class="form-select" aria-label="Default select example" formControlName="Design"  #Design (blur)="ValueChanged(Design)">
+                        <select class="form-select" aria-label="Default select example" formControlName="Design" >
                   <option selected value="CC">CC</option>
                   <option value="CC 1">CC 1</option>
                   <option value="CC 2">CC 2</option>
@@ -99,7 +99,7 @@
                 <div class="form-group row form_layout">
                     <label for="inputPassword" class="col-md-4 col-form-label">Color</label>
                     <div class="col-md-8">
-                        <select class="form-select" aria-label="Default select example" formControlName="Color"  #Color (blur)="ValueChanged(Color)">
+                        <select class="form-select" aria-label="Default select example" formControlName="Color">
                   <option selected value="Dark Finish">Dark Finish</option>
                   <option value="Black">Black</option>
                   <option value="White">White</option>
@@ -169,7 +169,7 @@
                 <div class="form-group row form_layout">
                     <label for="inputPassword" class="col-md-4 col-form-label required">Track Size</label>
                     <div class="col-md-8">
-                        <select class="form-select" aria-label="Default select example" formControlName="Track" #Track (blur)="ValueChanged(Track)">
+                        <select class="form-select" aria-label="Default select example" formControlName="Track">
   <option selected value="2” Flag & Jamb Brackets Loose">2” Flag & Jamb Brackets Loose</option>
   <option value="2” Flag & Jamb Brackets Loose1">2” Flag & Jamb Brackets Loose1</option>
   <option value="2” Flag & Jamb Brackets Loose2">2” Flag & Jamb Brackets Loose2</option>
@@ -233,7 +233,7 @@
                 <div class="form-group row form_layout">
                     <label for="inputPassword" class="col-md-4 col-form-label required">MISC Lock Options</label>
                     <div class="col-md-8">
-                        <input class="form-check-input" type="radio" name="misclock" id="misclock" value="1" formControlName="misclock"  #misclock (blur)="ValueChanged(misclock)">
+                        <input class="form-check-input" type="radio" name="misclock" id="misclock" value="1" formControlName="misclock" >
                         <label class="form-check-label" for="misclock">No Lock Hole
   </label>
                     </div>
@@ -241,7 +241,7 @@
                 <div class="form-group row form_layout">
                     <label for="inputPassword" class="col-md-4 col-form-label required">Packaging</label>
                     <div class="col-md-8">
-                        <select class="form-select" aria-label="Default select example" formControlName="Packaging"  #Packaging (blur)="ValueChanged(Packaging)">
+                        <select class="form-select" aria-label="Default select example" formControlName="Packaging">
   <option selected value="[x] Distributor">[x] Distributor</option>
   <option value="[x] Distributor 1">[x] Distributor 1</option>
   <option value="[x] Distributor 2">[x] Distributor 2</option>
@@ -316,28 +316,10 @@
   </label>
                         </div>
                     </div>
-
+<p class="showerror" *ngIf="showError">Please fill the Form First</p>
                 </div>
             </div>
-            <!-- <div class="layout">
-                <div class="form-group row form_layout">
-                    <div class="col-sm-12">
-                        <input class="form-check-input" type="checkbox" name="Fresher" formControlName="Configuration" value="1" id="Configuration">
-                        <label class="form-check-label" for="Configuration">
-    Special Configuration Request
-  </label>
-
-                    </div>
-                </div>
-
-            </div>
-            <div class="layout">
-                <p>Torsion Spring Inquiry <span>></span></p>
-            </div>
-            <div class="layout">
-                <p>Additional Information <span>></span></p>
-            </div> -->
-            <div class="layout">
+             <div class="layout">
                 <div class="d-flex py-4 px-4 justify-content-end">
                     <button type="button" class="btn btn_border">PREVIEW</button>
                     <button type="button" class="btn btn-light ms-4" (click)="onSubmit()">Add To Cart</button>

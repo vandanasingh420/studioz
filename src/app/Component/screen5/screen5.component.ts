@@ -23,6 +23,7 @@ export class Screen5Component implements OnInit {
         });
     }
     DeleteItem(event: any) {
+        console.log("event", event)
         this.userService.delete(event.id).subscribe(response => {
             this.router.navigate(['/Screen1'])
         })

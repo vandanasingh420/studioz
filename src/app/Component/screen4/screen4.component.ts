@@ -10,6 +10,7 @@ import { CartService } from 'src/app/Service/cart.service';
 })
 export class Screen4Component implements OnInit {
     newprogessbar: number = 0;
+    showError = false;
     addDetails = new FormGroup({
         assembly: new FormControl('', [Validators.minLength(2), Validators.required]),
         Widthft: new FormControl('', [Validators.minLength(2)]),
@@ -94,27 +95,33 @@ export class Screen4Component implements OnInit {
 
     }
     ValueChanged(input: any) {
-        if (this.addDetails.controls.assembly.value && this.addDetails.controls.Widthft.value && this.addDetails.controls.Widthin.value && this.addDetails.controls.Heigthft.value && this.addDetails.controls.Heigthin.value && this.addDetails.controls.Design.value && this.addDetails.controls.Color.value && this.addDetails.controls.Windcode.value) {
-            this.newprogessbar = this.newprogessbar + 15;
+        if (this.addDetails.controls.assembly.value && this.addDetails.controls.Widthft.value && this.addDetails.controls.Widthin.value && this.addDetails.controls.Heigthft.value && this.addDetails.controls.Heigthin.value) {
+            this.newprogessbar = this.newprogessbar + 25;
         }
         else if (this.addDetails.controls.glassType.value) {
-            this.newprogessbar = this.newprogessbar + 5;
+            this.newprogessbar = this.newprogessbar + 25;
         }
         else if (this.addDetails.controls.Spring.value && this.addDetails.controls.Track.value) {
-            this.newprogessbar = this.newprogessbar + 15;
-        } if (this.newprogessbar > 100) {
+            this.newprogessbar = this.newprogessbar + 25;
+        }
+        else if (this.addDetails.controls.Lock.value && this.addDetails.controls.misclock.value && this.addDetails.controls.Packaging.value) {
+            this.newprogessbar = this.newprogessbar + 25;
+        }
+        if (this.newprogessbar > 100) {
             this.newprogessbar = 100
         }
     }
     onSubmit() {
         if (this.addDetails.valid) {
+            this.showError = false;
+
             if (this.router.url == '/Screen4/Edit') {
                 this.newprogessbar = 100;
                 this.userService.update(this.RowData.id, this.addDetails.value)
                     .subscribe(response => {
                     })
                 this.router.navigate(['/Screen5'], {
-                    state: { data: this.addDetails.value }
+                    queryParams: this.addDetails.value
                 });
             }
             else {
@@ -127,5 +134,9 @@ export class Screen4Component implements OnInit {
                     })
             }
         }
+        else {
+            this.showError = true;
+        }
     }
+
 }
